@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <p id="status"></p>
+
+  
+
+<div id="demo"></div>
+
+<script>
+const statusElement = document.getElementById('status');
+function updateStatus() {
+  if (navigator.onLine) {
+    statusElement.textContent = 'You are currently online.';
+  } else {
+    statusElement.textContent = 'You are currently offline.';
+  }
+}
+window.addEventListener('online', updateStatus);
+window.addEventListener('offline', updateStatus);
+updateStatus();
+</script>
+
+</body>
+</html>
